@@ -58,19 +58,56 @@
                 <p>
                     <img src="./assets/images/lorem.jpg" alt="lorem" width="140px"
                         style="float: left; margin: -15px 20px 0px 15px;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa consequuntur architecto facere
-                    consectetur saepe nemo, quas
-                    placeat enim laborum tempore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                    consequuntur architecto facere
-                    consectetur saepe nemo, quas
-                    placeat enim laborum tempore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                    consequuntur architecto facere
-                    consectetur saepe nemo, quas
-                    placeat enim laborum tempore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                    consequuntur architecto facere
-                    consectetur saepe nemo, quas
-                    placeat enim laborum tempore?
+                    В случае, если кодировка сайта и базы данных не совпадает
+                    (часть текста на сайте выводится нормально, а часть текста из базы — в виде непонятных знаков),
+                    необходимо в скрипте, который подключается к базе данных, добавить команды, которые укажут MySQL-серверу
+                    кодировку, в которой нужно выводить текст. В зависимости от того, какую библиотеку PHP вы используете, 
+                    команды будут выглядеть так:
                 </p>
+                <ul>
+                    <li>
+                        <div> 
+                            Для библиотеки
+                            <strong>mysql</strong>:
+                            <pre class="code php">
+                                <a target="_blank" href="http://www.php.net/mysql_query">
+                                    <span class="kw3">mysql_query</span>
+                                </a>
+                                <span class="br0">(</span>
+                                <span class="st0">"SET NAMES 'utf8' COLLATE 'utf8_general_ci'"</span>
+                                <span class="br0">)</span>
+                                <span class="sy0">;</span>
+                                    <a target="_blank" href="http://www.php.net/mysql_query">
+                                        <span class="kw3">mysql_query</span>
+                                    </a>
+                                <span class="br0">(</span>
+                                <span class="st0">"SET CHARACTER SET 'utf8'"</span>
+                                <span class="br0">)</span>
+                                <span class="sy0">;</span>
+                            </pre>
+                        </div>
+                    </li>
+                    <li class="level1">
+                        <div class="li"> Для библиотеки <strong>mysqli</strong>:<pre class="code php">
+                        <a target="_blank" href="http://www.php.net/mysqli_query">
+                            <span class="kw3">mysqli_query</span></a>
+                            <span class="br0">(</span>
+                            <span class="re0">$link</span>
+                            <span class="sy0">,</span>
+                            <span class="st0">"SET NAMES 'utf8' COLLATE 'utf8_general_ci'"</span>
+                            <span class="br0">)</span>
+                            <span class="sy0">;</span>
+                            <a target="_blank" href="http://www.php.net/mysqli_query">
+                            <span class="kw3">mysqli_query</span>
+                            </a><span class="br0">(</span>
+                            <span class="re0">$link</span>
+                            <span class="sy0">,</span>
+                            <span class="st0">"SET CHARACTER SET 'utf8'"</span>
+                            <span class="br0">)</span><span class="sy0">;</span>
+                            </pre>
+                        </div>
+                    </li>
+                </ul>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa consequuntur architecto facere
                     consectetur saepe nemo, quas
